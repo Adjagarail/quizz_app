@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="../assets/plugins/summernote/dist/summernote.css"/>
+
+    <!-- Core css -->
+    <link rel="stylesheet" href="/assets/css/style.min.css"/>
+
         {% block stylesheets %}{% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="font-muli theme-cyan gradient">
+        {% block body %}
+        
+        {% block footer %}
+        {% endblock footer %}
+
+        {% endblock %}
         {% block javascripts %}{% endblock %}
+
+    <!-- Start Main project js, jQuery, Bootstrap -->
+    <script src="/assets/bundles/lib.vendor.bundle.js"></script>
+
+    <!-- Start all plugin js -->
+    <script src="../assets/bundles/counterup.bundle.js"></script>
+    <script src="../assets/bundles/apexcharts.bundle.js"></script>
+    <script src="../assets/bundles/summernote.bundle.js"></script>
+
+    <!-- Start project main js  and page js -->
+    <script src="/assets/js/core.js"></script>
+    <script src="assets/js/page/index.js"></script>
+    <script src="assets/js/page/summernote.js"></script>
+
     </body>
 </html>

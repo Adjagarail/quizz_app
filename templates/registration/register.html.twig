@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+<div class="auth option2">
+    <div class="auth_left">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <a class="header-brand" href="{{ path('home')}}"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                    <div class="card-title">Create new account</div>
+                </div>
+
+                    {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                    {% endfor %}
+            {{ form_start(registrationForm) }}
+
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    {{ form_widget(registrationForm.Nom, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email address</label>
+                     {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    {{ form_widget(registrationForm.plainPassword, {'attr':{'class':'form-control' }}) }}
+                </div>
+
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                    {{ form_widget(registrationForm.agreeTerms, {'attr':{'class':'custom-control-input'}}) }}
+                    <span class="custom-control-label">Agree the <a href="#">terms and policy</a></span>
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-block">Create new account</button>
+                    <div class="text-muted mt-4">Already have account? <a href="{{ path('app_login') }}">Sign in</a></div>
+                </div>
+
+            {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

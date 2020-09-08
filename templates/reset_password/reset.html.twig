@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+
+<div class="auth option2">
+    <div class="auth_left">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <a class="header-brand" href="{{ path('home')}}"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                    <div class="card-title">Forgot password</div>
+                </div>
+                  {{ form_start(resetForm) }}
+                <p class="text-muted">Enter your email address and your password will be reset and emailed to you.</p>
+                <div class="form-group">
+                    {{ form_row(resetForm.plainPassword) }}
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-block">Send me new password</button>
+                    <div class="text-muted mt-4">Forget it, <a href="{{ path('app_login')}}">Send me Back</a> to the Sign in screen.</div>
+                </div>
+                
+                {{ form_end(resetForm) }}
+            </div>
+        </div>        
+    </div>
+</div>
+
+
+    <h1>Reset your password</h1>
+
+    {{ form_start(resetForm) }}
+
+        <button class="btn btn-primary">Reset password</button>
+    {{ form_end(resetForm) }}
+{% endblock %}

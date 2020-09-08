@@ -1,0 +1,335 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quizz index{% endblock %}
+
+{% block body %}
+    <!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+    </div>
+</div>
+
+<div id="main_content">
+    <!-- Start Main top header -->
+    <div id="header_top" class="header_top">
+        <div class="container">
+            <div class="hleft">
+                <a class="header-brand" href="{{ path('home')}}"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
+                    <a href="page-search.html" class="nav-link icon"><i class="fa fa-dashboard" data-toggle="tooltip" data-placement="right" title="Dashboard"></i></a>
+                    <a href="app-email.html"  class="nav-link icon app_inbox"><i class="fe fe-inbox" data-toggle="tooltip" data-placement="right" title="Inbox"></i></a>
+                    <a href="app-filemanager.html"  class="nav-link icon app_file xs-hide"><i class="fe fe-folder" data-toggle="tooltip" data-placement="right" title="File Manager"></i></a>
+                    <a href="app-social.html"  class="nav-link icon xs-hide"><i class="fe fe-share-2" data-toggle="tooltip" data-placement="right" title="Social Media"></i></a>
+                    <a href="javascript:void(0)" class="nav-link icon theme_btn"><i class="fe fe-feather"></i></a>
+                    <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
+                </div>
+            </div>
+            <div class="hright">
+                <a href="{{ path('app_logout')}}" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
+            </div>
+        </div>
+    </div>
+    <!-- Start Rightbar setting panel -->
+    <div id="rightsidebar" class="right_sidebar">
+        <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings" aria-expanded="true">Paramétres</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">
+                <div class="mb-4">
+                    <h6 class="font-14 font-weight-bold text-muted">Theme Color</h6>
+                    <ul class="choose-skin list-unstyled mb-0">
+                        <li data-theme="azure"><div class="azure"></div></li>
+                        <li data-theme="indigo"><div class="indigo"></div></li>
+                        <li data-theme="purple"><div class="purple"></div></li>
+                        <li data-theme="orange"><div class="orange"></div></li>
+                        <li data-theme="green"><div class="green"></div></li>
+                        <li data-theme="cyan" class="active"><div class="cyan"></div></li>
+                        <li data-theme="blush"><div class="blush"></div></li>
+                        <li data-theme="white"><div class="bg-white"></div></li>
+                    </ul>
+                </div>
+                <div class="mb-4">
+                    <h6 class="font-14 font-weight-bold text-muted">Font Style</h6>
+                    <div class="custom-controls-stacked font_setting">
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="font" value="font-muli" checked="">
+                            <span class="custom-control-label">Muli Google Font</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="font" value="font-montserrat">
+                            <span class="custom-control-label">Montserrat Google Font</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="font" value="font-poppins">
+                            <span class="custom-control-label">Poppins Google Font</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="font-14 font-weight-bold mt-4 text-muted">Paramétres Généraux</h6>
+                    <ul class="setting-list list-unstyled mt-1 setting_switch">
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description"> Mode Nuit </span>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-darkmode">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Fix Navbar top</span>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-fixnavbar">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Header Dark</span>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-pageheader">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Min Sidebar Dark</span>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-min_sidebar">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Sidebar Dark</span>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-sidebar">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Gradient Color</span>
+                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-gradient" checked="">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Start Theme panel do not add in project -->
+    <div class="theme_div">
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group list-unstyled">
+                    <li class="list-group-item mb-2">
+                        <p>Light Version</p>
+                        <a href="../university/index.html"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <p>Dark Version</p>
+                        <a href="../university-dark/index.html"><img src="../assets/images/themes/dark.png" class="img-fluid" alt="" /></a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <p>RTL Version</p>
+                        <a href="../university-rtl/index.html"><img src="../assets/images/themes/rtl.png" class="img-fluid" alt="" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>        
+    </div>
+       <!-- Start Main leftbar navigation -->
+    <div id="left-sidebar" class="sidebar">
+        <h5 class="brand-name"> Quizzer <a href="javascript:void(0)" class="menu_option float-right"></a></h5>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni"></a></li>
+        </ul>
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
+                <nav class="sidebar-nav">
+                    <ul class="metismenu">
+                        <li><a href="{{ path('dashboard')}}"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li class="active"><a href="{{ path('quizz_index')}}"><i class="fa fa-black-tie"></i><span>Quizz</span></a></li>
+                        <li><a href="{{ path('categorie_index')}}"><i class="fa fa-user-circle-o"></i><span>Categories</span></a></li>
+                        <li><a href="{{ path('question_index')}}"><i class="fa fa-users"></i><span>Questions</span></a></li>
+                        <li><a href="{{ path('reponse_index')}}"><i class="fa fa-graduation-cap"></i><span>Reponses</span></a></li>  
+                        <li><a href="#"><i class="fa fa-users"></i><span>Utilisateurs</span></a></li>                    
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Start project content area -->
+    <div class="page">
+        <!-- Start Page header -->
+        <div class="section-body" id="page_top">
+            <div class="container-fluid">
+                <div class="page-header">
+                    <div class="left">                        
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Vous Cherchez....">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Recherchez</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="notification d-flex">
+                            <div class="dropdown d-flex">
+                                <a href="javascript:void(0)" class="chip ml-3" data-toggle="dropdown">
+                                   {{ app.user.Nom }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                    <a class="dropdown-item" href="page-profile.html"><i class="dropdown-icon fe fe-user"></i> Profile</a>
+                                    <a class="dropdown-item" href="app-setting.html"><i class="dropdown-icon fe fe-settings"></i> Settings</a>
+                                    <a class="dropdown-item" href="app-email.html"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="dropdown-icon fe fe-mail"></i> Inbox</a>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-send"></i> Message</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
+                                    <a class="dropdown-item" href="{{ path('app_logout')}}"><i class="dropdown-icon fe fe-log-out"></i> Sign out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Page title and tab -->
+        <div class="section-body">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="header-action">
+                        <h1 class="page-title">Dashboard</h1>
+                        <ol class="breadcrumb page-breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{path('dashboard')}}">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Quizz</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-body mt-4">
+            <div class="container-fluid">
+                <div class="row clearfix row-deck">
+                    <div class="col-6 col-md-3 col-xl-3">
+                        <div class="card">
+                            <div class="card-body ribbon">
+                                <div class="ribbon-box green" data-toggle="tooltip" title="New Professors">5</div>
+                                <a href="professors.html" class="my_sort_cut text-muted">
+                                    <i class="fa fa-black-tie"></i>
+                                    <span>Quizz</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-xl-3">
+                        <div class="card">
+                            <div class="card-body ribbon">
+                            <div class="ribbon-box green" data-toggle="tooltip" title="New Staff">8</div>
+                                <a href="app-contact.html" class="my_sort_cut text-muted">
+                                    <i class="fa fa-address-book"></i>
+                                    <span>Categorie</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-xl-3">
+                        <div class="card">
+                            <div class="card-body ribbon">
+                                <div class="ribbon-box orange" data-toggle="tooltip" title="New Staff">8</div>
+                                <a href="staff.html" class="my_sort_cut text-muted">
+                                    <i class="fa fa-folder"></i>
+                                    <span>Questions</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-xl-3">
+                        <div class="card">
+                            <div class="card-body ribbon">
+                            <div class="ribbon-box orange" data-toggle="tooltip" title="New Staff">8</div>
+                                <a href="app-filemanager.html" class="my_sort_cut text-muted">
+                                    <i class="fa fa-user-circle-o"></i>
+                                    <span>Utilisateurs</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="admin-Dashboard" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Liste des Quizz</h3>
+                                        <div class="card-options">
+                                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                            {# <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a> #}
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                                                    <div class="table-responsive">
+                                <table class="table table-hover table-vcenter text-nowrap table-striped mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>#ID</th>
+                                            <th>Quizz</th>
+                                            <th>Categorie</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for quizz in quizzs %}
+
+                                        <tr>
+                                            <td class="w60">
+                                               {{ quizz.id }}
+                                            </td>
+                                            <td><div class="font-15">{{ quizz.Quizz }}</div></td>
+                                            <td><span>{{ quizz.Categorie }}</span></td>
+                                            <td>
+                                                <a href="{{ path('quizz_show', {'id': quizz.id}) }}" type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></a>
+                                                <a href="{{ path('quizz_edit', {'id': quizz.id}) }}" type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></a>
+                                                <a href="" type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></a>
+                                            </td>
+                                        </tr>
+
+                                        {% else %}
+
+                                        <tr>
+                                            <td colspan="3">no records found</td>
+                                        </tr>   
+                                        
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start main footer -->
+        <div class="section-body">
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            Copyright © 2020 <a href="#"> Quizzer </a>.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>    
+</div>
+{% endblock %}
