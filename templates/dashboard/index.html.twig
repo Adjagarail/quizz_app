@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DashboardController!{% endblock %}
+{% block title %} Tableau de Bord {% endblock %}
 
 {% block body %}
     {% for message in app.flashes('success') %}
@@ -698,7 +698,9 @@
                         <div class="notification d-flex">
                             <div class="dropdown d-flex">
                                 <a href="javascript:void(0)" class="chip ml-3" data-toggle="dropdown">
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                                    {{ app.user.Nom }}
+                                {% endif %}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                     <a class="dropdown-item" href="page-profile.html"><i class="dropdown-icon fe fe-user"></i> Profile</a>

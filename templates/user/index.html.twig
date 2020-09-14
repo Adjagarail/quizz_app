@@ -225,6 +225,7 @@
                                         <div class="card-options">
                                             <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                                             <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                            <a href="{{path('user_new')}}" class="card-options"><i class="fa fa-plus"></i></a>
                                             {# <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a> #}
                                         </div>
                                     </div>
@@ -255,7 +256,7 @@
                                             <td>
                                                 <a href="{{ path('user_show', {'id': user.id}) }}" type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></a>
                                                 <a href="{{ path('user_edit', {'id': user.id}) }}" type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></a>
-                                                <a href="" type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></a>
+                                                {{ include('user/_delete_form.html.twig') }}
                                             </td>
                                         </tr>
 
