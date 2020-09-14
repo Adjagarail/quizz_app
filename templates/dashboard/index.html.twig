@@ -39,8 +39,7 @@
     <div id="rightsidebar" class="right_sidebar">
         <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
         <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings" aria-expanded="true">Settings</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity" aria-expanded="false">Activity</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings" aria-expanded="true">Paramétres</a></li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">
@@ -79,7 +78,7 @@
                     <ul class="setting-list list-unstyled mt-1 setting_switch">
                         <li>
                             <label class="custom-switch">
-                                <span class="custom-switch-description">Night Mode</span>
+                                <span class="custom-switch-description"> Mode Nuit </span>
                                 <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-darkmode">
                                 <span class="custom-switch-indicator"></span>
                             </label>
@@ -114,106 +113,13 @@
                         </li>
                         <li>
                             <label class="custom-switch">
-                                <span class="custom-switch-description">Icon Color</span>
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-iconcolor">
-                                <span class="custom-switch-indicator"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="custom-switch">
                                 <span class="custom-switch-description">Gradient Color</span>
                                 <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-gradient" checked="">
                                 <span class="custom-switch-indicator"></span>
                             </label>
                         </li>
-                        <li>
-                            <label class="custom-switch">
-                                <span class="custom-switch-description">Box Shadow</span>
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-boxshadow">
-                                <span class="custom-switch-indicator"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="custom-switch">
-                                <span class="custom-switch-description">RTL Support</span>
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-rtl">
-                                <span class="custom-switch-indicator"></span>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="custom-switch">
-                                <span class="custom-switch-description">Box Layout</span>
-                                <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-boxlayout">
-                                <span class="custom-switch-indicator"></span>
-                            </label>
-                        </li>
                     </ul>
                 </div>
-                <hr>
-                <div class="form-group">
-                    <label class="d-block">Storage <span class="float-right">77%</span></label>
-                    <div class="progress progress-sm">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;"></div>
-                    </div>
-                    <button type="button" class="btn btn-primary btn-block mt-3">Upgrade Storage</button>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane vivify fadeIn" id="activity" aria-expanded="false">
-                <ul class="new_timeline mt-3">
-                    <li>
-                        <div class="bullet pink"></div>
-                        <div class="time">11:00am</div>
-                        <div class="desc">
-                            <h3>Attendance</h3>
-                            <h4>Computer Class</h4>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="bullet pink"></div>
-                        <div class="time">11:30am</div>
-                        <div class="desc">
-                            <h3>Added an interest</h3>
-                            <h4>“Volunteer Activities”</h4>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="bullet green"></div>
-                        <div class="time">12:00pm</div>
-                        <div class="desc">
-                            <h3>Developer Team</h3>
-                            <h4>Hangouts</h4>
-                            <ul class="list-unstyled team-info margin-0 p-t-5">                                            
-                                <li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>                                            
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="bullet green"></div>
-                        <div class="time">2:00pm</div>
-                        <div class="desc">
-                            <h3>Responded to need</h3>
-                            <a href="javascript:void(0)">“In-Kind Opportunity”</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="bullet orange"></div>
-                        <div class="time">1:30pm</div>
-                        <div class="desc">
-                            <h3>Lunch Break</h3>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="bullet green"></div>
-                        <div class="time">2:38pm</div>
-                        <div class="desc">
-                            <h3>Finish</h3>
-                            <h4>Go to Home</h4>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
@@ -768,7 +674,7 @@
                         <li><a href="{{ path('categorie_index')}}"><i class="fa fa-user-circle-o"></i><span>Categories</span></a></li>
                         <li><a href="{{ path('question_index')}}"><i class="fa fa-users"></i><span>Questions</span></a></li>
                         <li><a href="{{ path('reponse_index')}}"><i class="fa fa-graduation-cap"></i><span>Reponses</span></a></li>  
-                        <li><a href="#"><i class="fa fa-users"></i><span>Utilisateurs</span></a></li>                      
+                        <li><a href="{{path('user_index')}}"><i class="fa fa-users"></i><span>Utilisateurs</span></a></li>                      
                     </ul>
                 </nav>
             </div>
