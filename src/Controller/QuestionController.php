@@ -91,12 +91,38 @@ class QuestionController extends AbstractController
     /**
      * @Route("/{id}/edit", name="question_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Question $question): Response
+    public function edit(Request $request, Question $question, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(QuestionType::class, $question);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /** @var UploadedFile $Image */
+            $Image = $form->get('Image')->getData();
+
+            // this condition is needed because the 'brochure' field is not required
+            // so the PDF file must be processed only when a file is uploaded
+            if ($Image) {
+                $originalFilename = pathinfo($Image->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $Image->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $Image->move(
+                        $this->getParameter('image_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'Imagename' property to store the PDF file name
+                // instead of its contents
+                $question->setImage($newFilename);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('question_index');
