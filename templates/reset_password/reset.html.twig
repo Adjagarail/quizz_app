@@ -7,6 +7,11 @@
 <div class="auth option2">
     <div class="auth_left">
         <div class="card">
+                {% for message in app.flashes('reset_password_error') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+                {% endfor %}    
             <div class="card-body">
                 <div class="text-center">
                     <a class="header-brand" href="{{ path('home')}}"><i class="fa fa-graduation-cap brand-logo"></i></a>

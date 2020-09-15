@@ -16,7 +16,32 @@
     <!-- Core css -->
     <link rel="stylesheet" href="/assets/css/style.min.css"/>
 
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <style>
+::placeholder{
+	color: #9a9a9a;
+	font-weight: 400;
+}
+.span{
+	position: absolute;
+	right: 41px;
+	transform: translate(0,-50%);
+	top: 55%;
+	cursor: pointer;
+}
+.span_register{
+	position: absolute;
+	right: 41px;
+	transform: translate(0,-50%);
+	top: 64%;
+	cursor: pointer;
+}
+.fad{
+	font-size: 20px;
+	color: #7a797e;
+}
+        </style>
+        {% endblock %}
     </head>
     <body class="font-muli theme-cyan gradient">
         {% block body %}
@@ -25,10 +50,11 @@
         {% endblock footer %}
 
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %} {% endblock %}
 
     <!-- Start Main project js, jQuery, Bootstrap -->
     <script src="/assets/bundles/lib.vendor.bundle.js"></script>
+    <script src="/assets/js/reveal_password.js"></script>
 
     <!-- Start all plugin js -->
     <script src="../assets/bundles/counterup.bundle.js"></script>
